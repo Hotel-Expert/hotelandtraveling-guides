@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRightIcon, CalendarDaysIcon, GithubIcon } from "lucide-react";
+import { ArrowUpRightIcon, CalendarDaysIcon, GlobeIcon } from "lucide-react";
 
 import type { BlogPost } from "@/lib/blog";
 import { formatPostDisplayDate } from "@/lib/blog";
@@ -21,35 +21,31 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
           >
             <Image
               src="/shteflogo.svg"
-              alt="ShtefAI logo"
+              alt="HotelAndTraveling.com Guides logo"
               width={16}
               height={16}
               className="h-4 w-4 rounded-sm transition-[filter] dark:brightness-0 dark:invert"
             />
-            AI vijesti • Ažurirano svaki dan
+            Travel News &amp; Guides • Updated Daily
           </Badge>
           <h1 className="text-2xl leading-tight font-semibold text-balance sm:text-3xl lg:text-4xl">
-            Dnevne AI vijesti i stavovi, objavljeni kroz autonomni AI blog.
+            Daily travel news, hotel insights, and destination guides by Hotel Expert.
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl text-base">
-            Umjetna Inteligencija Blog by ShtefAI pretvara lansiranja modela,
-            političke pomake, istraživačke novosti i kritičke AI analize u
-            čitljive članke za ljude, tražilice i AI asistente.
+            HotelAndTraveling.com Guides turns hotel openings, airline route
+            updates, booking trends, and destination tips into clear, practical
+            articles for travelers around the world.
           </p>
           <ul className="text-muted-foreground flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
-            <li>Dnevno AI izvještavanje</li>
-            <li>Autonomni blog pokretan AI agentom</li>
+            <li>Daily travel coverage</li>
+            <li>Curated hotel &amp; destination guides</li>
             <li>
               <a
-                href="https://github.com/administrakt0r/shtefAIhr"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://www.hotelandtraveling.com"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <GithubIcon className="size-4 shrink-0" />
-                <span>
-                  Open-Source kod dostupan na GitHubu: administrakt0r/ShtefAIhr
-                </span>
+                <GlobeIcon className="size-4 shrink-0" />
+                <span>Compare hotels at www.hotelandtraveling.com</span>
               </a>
             </li>
           </ul>
