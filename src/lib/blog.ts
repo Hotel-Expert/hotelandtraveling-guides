@@ -1,4 +1,4 @@
-export type BlogCategory = "AI vijesti" | "Analiza";
+export type BlogCategory = "Travel News" | "Hotel Guides";
 export type BlogStats = {
   postCount: number;
   daysRunning: number;
@@ -55,8 +55,14 @@ export const getPostRssDate = (post: PostDateSource) =>
 
 export const formatDisplayDate = (publishedOn: string) => {
   const [year, month, day] = publishedOn.split("-").map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
 
-  return `${day}.${month}.${year}.`;
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
 };
 
 export const formatDisplayTime = (publishedTime?: string) => {
@@ -76,7 +82,7 @@ export const formatPostDisplayDateTime = (post: PostDateSource) => {
   const displayDate = formatPostDisplayDate(post);
   const displayTime = formatDisplayTime(post.publishedTime);
 
-  return displayTime ? `${displayDate} u ${displayTime}` : displayDate;
+  return displayTime ? `${displayDate} at ${displayTime}` : displayDate;
 };
 
 const parseCalendarDate = (value: string) => {
