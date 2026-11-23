@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GithubIcon, LeafIcon, RssIcon } from "lucide-react";
+import { GlobeIcon, LeafIcon, RssIcon } from "lucide-react";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
@@ -16,19 +16,15 @@ const FooterTop = () => (
 
     <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 whitespace-nowrap sm:gap-5">
       <span className="text-muted-foreground text-sm">
-        Piše <strong>Shtef</strong> uz autonomni workflow
+        Written by <strong>Hotel Expert</strong> with an autonomous workflow
       </span>
     </div>
 
     <div className="flex items-center gap-3">
       <Button variant="outline" asChild>
-        <a
-          href="https://github.com/administrakt0r/shtefAIhr"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GithubIcon className="size-4" />
-          GitHub repo
+        <a href="https://www.hotelandtraveling.com">
+          <GlobeIcon className="size-4" />
+          HotelAndTraveling.com
         </a>
       </Button>
       <Link
@@ -45,19 +41,16 @@ const FooterTop = () => (
 const colorStyles = {
   blue: "border-blue-100 bg-blue-50/50 hover:border-blue-300 hover:shadow-blue-500/10 dark:border-blue-900/50 dark:bg-blue-950/20 dark:hover:border-blue-700/50",
   purple: "border-purple-100 bg-purple-50/50 hover:border-purple-300 hover:shadow-purple-500/10 dark:border-purple-900/50 dark:bg-purple-950/20 dark:hover:border-purple-700/50",
-  red: "border-rose-100 bg-rose-50/50 hover:border-rose-300 hover:shadow-rose-500/10 dark:border-rose-900/50 dark:bg-rose-950/20 dark:hover:border-rose-700/50",
 };
 
 const accentStyles = {
   blue: "bg-blue-500",
   purple: "bg-purple-500",
-  red: "bg-rose-500",
 };
 
 const textStyles = {
   blue: "text-blue-700 dark:text-blue-400",
   purple: "text-purple-700 dark:text-purple-400",
-  red: "text-rose-700 dark:text-rose-400",
 };
 
 const NetworkCard = ({
@@ -68,18 +61,13 @@ const NetworkCard = ({
   description,
 }: {
   href: string;
-  colorScheme: "blue" | "purple" | "red";
+  colorScheme: "blue" | "purple";
   icon: string;
   title: string;
   description: string;
 }) => {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block"
-    >
+    <a href={href} className="group block">
       <div
         className={`relative overflow-hidden rounded-xl border p-4 transition-all duration-300 hover:shadow-lg ${colorStyles[colorScheme]}`}
       >
@@ -103,31 +91,23 @@ const FooterMiddle = () => (
   <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
     <div className="flex flex-col gap-4">
       <h3 className="text-muted-foreground mb-1 text-sm font-bold uppercase tracking-wider">
-        Administrakt0r mreža
+        HotelAndTraveling Network
       </h3>
 
       <NetworkCard
-        href="https://wpineu.com"
+        href="https://www.hotelandtraveling.com"
         colorScheme="blue"
-        icon="🌐"
-        title="WPinEU.com"
-        description="Besplatni Web Hosting u Europi optimiziran za WordPress i LLM."
+        icon="🏨"
+        title="HotelAndTraveling.com"
+        description="Compare hotel prices worldwide, explore top destinations, and book verified stays."
       />
 
       <NetworkCard
-        href="https://llm.kiwi"
+        href="https://www.hotelandtraveling.comblog/"
         colorScheme="purple"
-        icon="🥝"
-        title="LLM.kiwi"
-        description="Besplatan API pristup AI modelima i besplatni AI alati."
-      />
-
-      <NetworkCard
-        href="https://llm.com.hr"
-        colorScheme="red"
-        icon="🚀"
-        title="LLM.com.hr"
-        description="Besplatni generator web stranica i besplatni AI alati za poduzetnike i pojedince."
+        icon="✈️"
+        title="Travel Blog"
+        description="Classic destination stories, hotel spotlights, and travel inspiration from our archive."
       />
     </div>
 
@@ -143,9 +123,9 @@ const FooterMiddle = () => (
             Responsible AI Usage
           </div>
           <p className="text-muted-foreground max-w-2xl pl-2 text-sm leading-relaxed transition-colors group-hover:text-foreground">
-            Ovaj blog je dio inicijative za transparentne, sigurnije i
-            odgovornije AI sustave. Ovdje su pravila po kojima pokušavamo etično
-            koristiti autonomni AI u objavljivanju.
+            This publication is committed to transparent, reliable, and
+            responsible AI journalism. Read our editorial guidelines on how
+            autonomous AI assists our daily travel and hospitality reporting.
           </p>
         </div>
       </Link>
@@ -183,25 +163,23 @@ const FooterBottom = () => (
       >
         {SITE_NAME}
       </Link>{" "}
-      — mjesto gdje strojevi uče, a ljudi hvataju kontekst.
+      — smart hotel insights and daily travel guides.
       <br />
       <span className="block pt-1 text-xs">
-        Izradio{" "}
+        Part of{" "}
         <a
-          href="https://administraktor.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="https://www.hotelandtraveling.com"
           className="hover:text-primary underline underline-offset-2"
         >
-          administraktor.com
+          www.hotelandtraveling.com
         </a>
       </span>
     </p>
 
     <div className="max-w-xl text-left text-xs text-muted-foreground">
-      <strong>Napomena:</strong> sadržaj na ovom blogu nastaje kroz autonomni
-      objavni tok. Ako primijetite netočnost, pravni problem ili štetan sadržaj,
-      javite se na{" "}
+      <strong>Note:</strong> articles on this portal are produced through an
+      autonomous AI editorial workflow. If you notice any inaccuracy or issue,
+      please contact{" "}
       <a
         href={`mailto:${CONTACT_EMAIL}`}
         className="hover:text-primary underline underline-offset-2"
