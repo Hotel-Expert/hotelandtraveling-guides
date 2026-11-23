@@ -197,26 +197,25 @@ const getNewsPostSvg = ({ title, logoDataUri, preset, subtitle }) => {
   <rect x="94" y="79" width="44" height="44" rx="14" fill="rgba(255,255,255,0.34)" />
   <image href="${logoDataUri}" x="103" y="84" width="26" height="26" />
   <text x="160" y="104" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="24" font-weight="800" fill="${preset.accent}">
-    Umjetna Inteligencija Blog
+    HotelAndTraveling.com
   </text>
   <text x="160" y="126" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="16" font-weight="600" fill="rgba(16,24,40,0.72)">
     ${escapeXml(subtitle)}
   </text>
-  <rect x="72" y="176" width="188" height="42" rx="21" fill="${preset.accent}" />
-  <text x="104" y="203" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="1.8">AI VIJESTI</text>
+  <rect x="72" y="176" width="215" height="42" rx="21" fill="${preset.accent}" />
+  <text x="104" y="203" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="1.8">TRAVEL NEWS</text>
   <rect x="72" y="236" width="962" height="286" rx="38" fill="${preset.heroPanel}" />
   <rect x="1030" y="236" width="98" height="286" rx="28" fill="${preset.accentTwo}" opacity="0.92" />
   ${getTitleTextSvg({ title, lines, fontSize, x: 110, firstLineY })}
   <line x1="72" y1="552" x2="1128" y2="552" stroke="rgba(20,20,20,0.12)" />
   <text x="72" y="589" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="18" font-weight="600" fill="rgba(20,20,20,0.72)">
-    umjetnainteligencijablog.pages.dev
+    www.hotelandtraveling.com
   </text>
   <text x="1128" y="589" text-anchor="end" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="22" font-weight="700" fill="${preset.accentTwo}">
-    Hrvatski AI blog
+    By Hotel Expert
   </text>
 </svg>`;
 };
-
 const getAnalysisPostSvg = ({ title, logoDataUri, preset, subtitle }) => {
   const lines = getTitleLines(title);
   const fontSize = getTitleFontSize(lines);
@@ -244,7 +243,7 @@ const getAnalysisPostSvg = ({ title, logoDataUri, preset, subtitle }) => {
   <rect x="96" y="80" width="44" height="44" rx="14" fill="rgba(255,255,255,0.32)" />
   <image href="${logoDataUri}" x="105" y="89" width="26" height="26" />
   <text x="158" y="104" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="24" font-weight="800" fill="${preset.accent}">
-    Umjetna Inteligencija Blog
+    HotelAndTraveling.com
   </text>
   <text x="158" y="126" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="16" font-weight="700" fill="rgba(15,36,66,0.72)">
     ${escapeXml(subtitle)}
@@ -263,10 +262,10 @@ const getAnalysisPostSvg = ({ title, logoDataUri, preset, subtitle }) => {
   })}
   <line x1="76" y1="552" x2="1128" y2="552" stroke="rgba(8,17,31,0.14)" />
   <text x="76" y="589" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="18" font-weight="700" fill="rgba(8,17,31,0.68)">
-    https://UmjetnaInteligencijaBlog.pages.dev
+    https://www.hotelandtraveling.com
   </text>
   <text x="1128" y="589" text-anchor="end" font-family="'Arial', 'Helvetica Neue', sans-serif" font-size="22" font-weight="800" fill="${preset.accent}">
-    Autonomni AI blog - shtefAI
+    Hotel Guides - Hotel Expert
   </text>
 </svg>`;
 };
@@ -318,17 +317,17 @@ const generatePostImages = async () => {
   await Promise.all(
     blogPosts.map(async (post) => {
       const collection =
-        post.category === "Analiza" ? analysisPresets : newsPresets;
+        post.category === "Hotel Guides" ? analysisPresets : newsPresets;
 
       const preset = collection[hashString(post.slug) % collection.length];
 
       const subtitle =
-        post.category === "Analiza"
-          ? "Komentar, kontekst i argument"
-          : "Vijesti koje odmah hvataju bit";
+        post.category === "Hotel Guides"
+          ? "Destination insights & practical tips"
+          : "Daily travel & hotel updates";
 
       const svg =
-        post.category === "Analiza"
+        post.category === "Hotel Guides"
           ? getAnalysisPostSvg({
               title: post.title,
               logoDataUri,
@@ -350,10 +349,10 @@ const generatePostImages = async () => {
   );
 
   const siteSvg = getNewsPostSvg({
-    title: "AI vijesti, analize i signal za Hrvatsku i regiju",
+    title: "Daily travel guides, hotel reviews, and booking insights",
     logoDataUri,
     preset: sitePreset,
-    subtitle: "Dnevni pregled umjetne inteligencije",
+    subtitle: "HotelAndTraveling.com Guides",
   });
 
   await renderImage(siteSvg, sharedOgPath, "png");
