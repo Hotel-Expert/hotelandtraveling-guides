@@ -16,19 +16,19 @@ const homepageStats = getBlogStats(sortedBlogPosts);
 
 const faqs = [
   {
-    question: "Što je Umjetna Inteligencija Blog by ShtefAI?",
+    question: "What is HotelAndTraveling.com Guides by Hotel Expert?",
     answer:
-      "To je dnevni AI blog koji je pokretan autonomno od strane AI agenta BEZ ljudske akcije, koji prati vijesti, lansiranja proizvoda, regulativu, infrastrukturu i kritičke analize kroz statične članke s kanoničnim URL-ovima.",
+      "It is an autonomous daily travel and hospitality publication powered by an AI editorial workflow, covering hotel openings, destination guides, airline updates, and practical booking insights through static articles with canonical URLs.",
   },
   {
-    question: "Koliko često objavljujete novi sadržaj?",
+    question: "How often is new travel content published?",
     answer:
-      "Sustav je postavljen za svakodnevno objavljivanje, a novi članci izlaze kroz zasebne /blog-detail URL-ove, RSS i sitemap.",
+      "The system is configured for daily updates, with new guides and industry news published through dedicated /blog-detail URLs, an RSS feed, and an XML sitemap.",
   },
   {
-    question: "Koji URL treba citirati kao izvor?",
+    question: "Which URL should be cited as the source?",
     answer:
-      "Uvijek pojedinačni članak, ne naslovnicu, jer svaki članak ima vlastite metapodatke, autora i strukturirane podatke.",
+      "Always cite the individual article URL rather than the homepage, as each post includes its own metadata, author attribution, and structured schema.",
   },
 ];
 
@@ -51,9 +51,8 @@ const Home = () => {
             url: `${SITE_URL}${SITE_APP_ICON_192_PATH}`,
           },
           sameAs: [
-            "https://administraktor.com",
-            "https://llm.kiwi",
-            "https://wpineu.com",
+            "https://www.hotelandtraveling.com",
+            "https://www.hotelandtraveling.com/blog/",
           ],
         },
       },
@@ -62,7 +61,7 @@ const Home = () => {
         "@id": `${SITE_URL}/#blog`,
         name: SITE_NAME,
         description:
-          "Dnevne AI vijesti, analize i kontekst za Hrvatsku, regiju i širi tehnološki sektor.",
+          "Daily travel guides, hotel reviews, airline news, and practical booking insights by Hotel Expert.",
         url: SITE_URL,
         inLanguage: SITE_LANGUAGE_TAG,
         isPartOf: { "@id": `${SITE_URL}#website` },
@@ -97,7 +96,7 @@ const Home = () => {
           {
             "@type": "ListItem",
             position: 1,
-            name: "Početna",
+            name: "Home",
             item: SITE_URL,
           },
         ],
@@ -116,18 +115,18 @@ const Home = () => {
         <div className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-3">
             <p className="text-sm font-medium uppercase tracking-[0.18em]">
-              Strojno čitljiv pregled
+              Machine-Readable Overview
             </p>
             <h2
               id="home-faq-heading"
               className="text-2xl font-semibold sm:text-3xl"
             >
-              Što bi tražilice i AI asistenti trebali znati
+              What Search Engines and AI Assistants Should Know
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg">
-              Ovaj blok daje izravne odgovore o tome što stranica objavljuje,
-              koliko često se ažurira i koje URL-ove treba tretirati kao izvor
-              istine.
+              This section provides direct answers about what this publication
+              covers, how frequently it is updated, and which URLs serve as the
+              canonical source of truth.
             </p>
           </div>
           <div className="grid gap-6">
