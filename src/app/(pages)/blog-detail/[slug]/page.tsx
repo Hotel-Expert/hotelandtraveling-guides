@@ -113,7 +113,7 @@ const PostNavigation = ({
         >
           <Link href={`/blog-detail/${newerPost.slug}`}>
             <ChevronLeftIcon className="size-4" />
-            Novija objava
+            Newer Post
           </Link>
         </Button>
       ) : (
@@ -123,7 +123,7 @@ const PostNavigation = ({
           disabled
         >
           <ChevronLeftIcon className="size-4" />
-          Novija objava
+          Newer Post
         </Button>
       )}
 
@@ -134,7 +134,7 @@ const PostNavigation = ({
           asChild
         >
           <Link href={`/blog-detail/${olderPost.slug}`}>
-            Starija objava
+            Older Post
             <ChevronRightIcon className="size-4" />
           </Link>
         </Button>
@@ -144,7 +144,7 @@ const PostNavigation = ({
           variant="outline"
           disabled
         >
-          Starija objava
+          Older Post
           <ChevronRightIcon className="size-4" />
         </Button>
       )}
@@ -187,7 +187,7 @@ export default async function BlogDetailPage({
             <aside className="hidden md:block">
               <div className="sticky top-28 rounded-[1.75rem] border border-border/75 bg-card/92 p-5 shadow-sm shadow-brand-blue/5">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-brand-blue">
-                  Sadržaj
+                  Contents
                 </p>
                 <div className="mt-4">
                   <DynamicToc />
@@ -200,12 +200,12 @@ export default async function BlogDetailPage({
                 <Breadcrumb>
                   <BreadcrumbList>
                     <BreadcrumbItem>
-                      <BreadcrumbLink href="/">Naslovnica</BreadcrumbLink>
+                      <BreadcrumbLink href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
                       <BreadcrumbLink href="/#categories">
-                        AI vijesti i analize
+                        Travel News &amp; Guides
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
@@ -220,7 +220,7 @@ export default async function BlogDetailPage({
                     {post.category}
                   </Badge>
                   <span className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.18em]">
-                    {post.readTime} min čitanja
+                    {post.readTime} min read
                   </span>
                 </div>
 
@@ -249,7 +249,7 @@ export default async function BlogDetailPage({
                     </Avatar>
                     <div className="space-y-1">
                       <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                        Autor
+                        Author
                       </p>
                       <p className="text-sm font-semibold text-foreground">
                         {post.author}
@@ -259,14 +259,14 @@ export default async function BlogDetailPage({
 
                   <div className="space-y-1 text-left sm:text-right">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                      Objavljeno
+                      Published
                     </p>
                     <time
                       dateTime={publishedIso}
                       className="text-sm font-semibold text-foreground"
                     >
                       {displayTime
-                        ? `${formatPostDisplayDate(post)} u ${displayTime}`
+                        ? `${formatPostDisplayDate(post)} at ${displayTime}`
                         : formatPostDisplayDate(post)}
                     </time>
                   </div>
@@ -348,13 +348,13 @@ export default async function BlogDetailPage({
                   {
                     "@type": "ListItem",
                     position: 1,
-                    name: "Naslovnica",
+                    name: "Home",
                     item: SITE_URL,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "AI vijesti i analize",
+                    name: "Travel News & Guides",
                     item: `${SITE_URL}/#categories`,
                   },
                   {
