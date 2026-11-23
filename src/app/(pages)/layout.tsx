@@ -7,15 +7,15 @@ import type { NavigationSection } from "@/components/blocks/menu-navigation";
 
 const navigationData: NavigationSection[] = [
   {
-    title: "Početna",
+    title: "Guides Home",
     href: "/#home",
   },
   {
-    title: "Najnovije",
+    title: "Latest Articles",
     href: "/#categories",
   },
   {
-    title: "O blogu",
+    title: "About",
     href: "/about",
   },
 ];
