@@ -35,7 +35,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-const allCategoryLabel = "Sve";
+const allCategoryLabel = "All";
 const nonFeaturedPosts = sortedBlogPosts.filter((post) => !post.featured);
 
 const uniqueCategories = [
@@ -107,7 +107,7 @@ const BlogGrid = ({
               >
                 <Link href={`/blog-detail/${post.slug}`}>
                   <ArrowRightIcon className="size-4 -rotate-45" />
-                  <span className="sr-only">Pročitaj više: {post.title}</span>
+                  <span className="sr-only">Read more: {post.title}</span>
                 </Link>
               </Button>
             </div>
@@ -150,10 +150,10 @@ const Blog = ({ stats }: BlogProps) => {
 
   const resultsSummary =
     filteredPosts.length === 0
-      ? "Nijedna objava ne odgovara trenutačnoj pretrazi i filtrima."
-      : `Prikazujemo ${paginatedPosts.length} od ${filteredPosts.length} ${
-          filteredPosts.length === 1 ? "objave" : "objava"
-        }${selectedTab !== allCategoryLabel ? ` u kategoriji ${selectedTab}` : ""}${searchQuery ? ` za "${searchQuery}"` : ""}.`;
+      ? "No articles match your current search and filters."
+      : `Showing ${paginatedPosts.length} of ${filteredPosts.length} ${
+          filteredPosts.length === 1 ? "article" : "articles"
+        }${selectedTab !== allCategoryLabel ? ` in ${selectedTab}` : ""}${searchQuery ? ` for "${searchQuery}"` : ""}.`;
 
   const handleTabChange = (tab: string) => {
     setCurrentPage(1);
@@ -175,7 +175,7 @@ const Blog = ({ stats }: BlogProps) => {
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="space-y-4">
           {selectedTab === allCategoryLabel && !searchQuery ? (
-            <p className="text-sm">Objave</p>
+            <p className="text-sm">Articles</p>
           ) : (
             <Breadcrumb>
               <BreadcrumbList>
@@ -188,13 +188,13 @@ const Blog = ({ stats }: BlogProps) => {
                       setSearchQuery("");
                     }}
                   >
-                    Objave
+                    Articles
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbPage>
-                    {searchQuery ? `Pretraga: ${searchQuery}` : selectedTab}
+                    {searchQuery ? `Search: ${searchQuery}` : selectedTab}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
@@ -202,26 +202,25 @@ const Blog = ({ stats }: BlogProps) => {
           )}
 
           <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
-            AI vijesti i AI
+            Travel News &amp; Hotel Guides
           </h2>
 
           <p className="text-muted-foreground text-lg md:text-xl">
-            Najnovije AI vijesti svakodnevno i analiza trenutnog stanja AI
-            tehnologije u svijetu - sve napisano automatski i autonomno bez
-            ljudske pomoći ili radnje. Slobodno kopirajte kod i stvorite svoj
-            autonomni AI blog, izvorni kod dostupan na Githubu
+            Daily travel industry news, hotel spotlights, and practical booking
+            guides published automatically by Hotel Expert. Explore destinations
+            and compare stays on www.hotelandtraveling.com.
           </p>
 
           <div className="inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-border/70 bg-muted/55 px-4 py-3 text-sm text-muted-foreground shadow-sm md:text-base">
-            <span>ShtefAI je samostalno napisao</span>
+            <span>Hotel Expert has published</span>
             <span className="font-semibold text-foreground">
               {stats.postCount}
             </span>
-            <span>blog postova i radi već</span>
+            <span>travel articles over</span>
             <span className="font-semibold text-foreground">
               {stats.daysRunning}
             </span>
-            <span>dana.</span>
+            <span>days.</span>
           </div>
         </div>
 
@@ -246,16 +245,16 @@ const Blog = ({ stats }: BlogProps) => {
 
             <div className="relative max-md:w-full">
               <Label htmlFor="blog-search" className="sr-only">
-                Pretraži objave
+                Search articles
               </Label>
               <div className="text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50">
                 <SearchIcon className="size-4" />
-                <span className="sr-only">Pretraga</span>
+                <span className="sr-only">Search</span>
               </div>
               <Input
                 id="blog-search"
                 type="text"
-                placeholder="Pretraži naslov ili sažetak"
+                placeholder="Search title or summary"
                 value={searchQuery}
                 aria-describedby="blog-results-summary"
                 onChange={(event) => {
@@ -267,7 +266,7 @@ const Blog = ({ stats }: BlogProps) => {
               {searchQuery ? (
                 <button
                   type="button"
-                  aria-label="Očisti pretragu"
+                  aria-label="Clear search"
                   onClick={() => {
                     setSearchQuery("");
                     setCurrentPage(1);
@@ -275,7 +274,7 @@ const Blog = ({ stats }: BlogProps) => {
                   className="text-muted-foreground hover:text-foreground absolute inset-y-0 right-0 flex items-center justify-center pr-3"
                 >
                   <XIcon className="size-4" />
-                  <span className="sr-only">Očisti pretragu</span>
+                  <span className="sr-only">Clear search</span>
                 </button>
               ) : null}
             </div>
@@ -305,7 +304,7 @@ const Blog = ({ stats }: BlogProps) => {
                     disabled={currentPage === 1}
                   >
                     <ChevronLeftIcon className="size-4" />
-                    <span className="sr-only">Prethodna stranica</span>
+                    <span className="sr-only">Previous page</span>
                   </Button>
 
                   <div className="flex items-center gap-1">
@@ -324,7 +323,7 @@ const Blog = ({ stats }: BlogProps) => {
                       </Button>
                     ))}
                     <span className="text-muted-foreground mx-2 text-sm sm:hidden">
-                      Stranica {currentPage} od {totalPages}
+                      Page {currentPage} of {totalPages}
                     </span>
                   </div>
 
@@ -335,7 +334,7 @@ const Blog = ({ stats }: BlogProps) => {
                     disabled={currentPage === totalPages}
                   >
                     <ChevronRightIcon className="size-4" />
-                    <span className="sr-only">Sljedeća stranica</span>
+                    <span className="sr-only">Next page</span>
                   </Button>
                 </div>
               ) : null}
@@ -345,10 +344,10 @@ const Blog = ({ stats }: BlogProps) => {
               <div className="bg-muted mb-4 flex size-16 items-center justify-center rounded-full">
                 <SearchIcon className="text-muted-foreground size-8" />
               </div>
-              <h3 className="text-xl font-medium">Nema pronađenih objava</h3>
+              <h3 className="text-xl font-medium">No articles found</h3>
               <p className="text-muted-foreground mt-2 max-w-xs">
-                Trenutačno ne nalazimo članke koji odgovaraju ovoj pretrazi ili
-                filtrima.
+                We couldn&apos;t find any articles matching your current search
+                or filters.
               </p>
               <Button
                 variant="link"
@@ -358,7 +357,7 @@ const Blog = ({ stats }: BlogProps) => {
                   setSearchQuery("");
                 }}
               >
-                Očisti sve filtere
+                Clear all filters
               </Button>
             </div>
           )}
