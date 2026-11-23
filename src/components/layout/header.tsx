@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { GithubIcon, MailIcon, MenuIcon } from "lucide-react";
+import { HomeIcon, MailIcon, MenuIcon } from "lucide-react";
 
 import type { NavigationSection } from "@/components/blocks/menu-navigation";
 import MenuDropdown from "@/components/blocks/menu-dropdown";
@@ -49,17 +49,13 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <div className="flex gap-3">
           <ModeToggle />
           <Button variant="outline" className="max-md:hidden" asChild>
-            <a
-              href="https://github.com/administrakt0r/shtefAIhr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GithubIcon className="size-4" />
-              GitHub
+            <a href="https://www.hotelandtraveling.com">
+              <HomeIcon className="size-4" />
+              Home
             </a>
           </Button>
           <Button variant="outline" className="max-sm:hidden" asChild>
-            <Link href="/contact-us">Kontakt</Link>
+            <Link href="/contact-us">Contact</Link>
           </Button>
 
           <div className="flex gap-3">
@@ -71,17 +67,13 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                   className="md:hidden"
                   asChild
                 >
-                  <a
-                    href="https://github.com/administrakt0r/shtefAIhr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <GithubIcon />
-                    <span className="sr-only">GitHub repo</span>
+                  <a href="https://www.hotelandtraveling.com">
+                    <HomeIcon />
+                    <span className="sr-only">Home</span>
                   </a>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>GitHub repo</TooltipContent>
+              <TooltipContent>Home</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -94,11 +86,11 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                 >
                   <Link href="/contact-us">
                     <MailIcon />
-                    <span className="sr-only">Kontakt</span>
+                    <span className="sr-only">Contact</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Kontakt</TooltipContent>
+              <TooltipContent>Contact</TooltipContent>
             </Tooltip>
 
             <MenuDropdown
@@ -108,7 +100,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
               trigger={
                 <Button variant="outline" size="icon" className="lg:hidden">
                   <MenuIcon />
-                  <span className="sr-only">Izbornik</span>
+                  <span className="sr-only">Menu</span>
                 </Button>
               }
             />
