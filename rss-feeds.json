@@ -1,68 +1,52 @@
 {
     "feeds": [
         {
-            "name": "TechCrunch AI",
-            "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+            "name": "Skift Travel News",
+            "url": "https://skift.com"
         },
         {
-            "name": "The Verge AI",
-            "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+            "name": "Travel + Leisure",
+            "url": "https://travelandleisure.com"
         },
         {
-            "name": "MIT Technology Review AI",
-            "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+            "name": "Conde Nast Traveler",
+            "url": "https://cntraveler.com"
         },
         {
-            "name": "VentureBeat AI",
-            "url": "https://venturebeat.com/category/ai/feed/"
+            "name": "Lonely Planet",
+            "url": "https://lonelyplanet.com"
         },
         {
-            "name": "Ars Technica AI",
-            "url": "https://feeds.arstechnica.com/arstechnica/technology-lab"
+            "name": "Hospitality Net",
+            "url": "https://hospitalitynet.org"
         },
         {
-            "name": "Wired AI",
-            "url": "https://www.wired.com/feed/tag/ai/latest/rss"
+            "name": "Hotel Management",
+            "url": "https://hotelmanagement.net"
         },
         {
-            "name": "The Register AI",
-            "url": "https://www.theregister.com/software/ai_ml/headlines.atom"
+            "name": "PhocusWire Travel Tech",
+            "url": "https://phocuswire.com"
         },
         {
-            "name": "AI News",
-            "url": "https://www.artificialintelligence-news.com/feed/"
+            "name": "One Mile at a Time",
+            "url": "https://onemileatatime.com"
         },
         {
-            "name": "Google AI Blog",
-            "url": "https://blog.google/technology/ai/rss/"
+            "name": "The Points Guy",
+            "url": "https://thepointsguy.com"
         },
         {
-            "name": "OpenAI Blog",
-            "url": "https://openai.com/blog/rss.xml"
+            "name": "Breaking Travel News",
+            "url": "https://breakingtravelnews.com"
         },
         {
-            "name": "Anthropic Blog",
-            "url": "https://www.anthropic.com/feed"
+            "name": "TravelPulse",
+            "url": "https://travelpulse.com"
         },
         {
-            "name": "Hugging Face Blog",
-            "url": "https://huggingface.co/blog/feed.xml"
-        },
-        {
-            "name": "DeepMind Blog",
-            "url": "https://deepmind.google/blog/rss.xml"
-        },
-        {
-            "name": "The Gradient",
-            "url": "https://thegradient.pub/rss/"
-        },
-        {
-            "name": "Import AI Newsletter",
-            "url": "https://jack-clark.net/feed/"
-        },
-        {
-            "name": "Towards Data Science",
-            "url": "https://towardsdatascience.com/feed"
+            "name": "Euronews Travel",
+            "url": "https://euronews.com"
         }
     ]
 }
