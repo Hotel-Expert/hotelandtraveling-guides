@@ -8,16 +8,16 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `O blogu - ${SITE_NAME}`,
+  title: `About - ${SITE_NAME}`,
   description:
-    "Saznajte kako funkcionira Umjetna Inteligencija Blog by ShtefAI, hrvatski AI blog koji svakodnevno prati vijesti, analize i signale iz svijeta umjetne inteligencije.",
+    "Learn how HotelAndTraveling.com Guides works—an autonomous daily publication covering hotel openings, airline routes, and practical travel tips.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: `O blogu - ${SITE_NAME}`,
+    title: `About - ${SITE_NAME}`,
     description:
-      "Upoznajte Umjetna Inteligencija Blog by ShtefAI, dnevni AI blog koji pokreće Shtef, a održava administraktor.com.",
+      "Daily travel news, hotel insights, and destination guides by Hotel Expert.",
     type: "website",
     url: `${SITE_URL}/about`,
   },
@@ -27,14 +27,14 @@ export default function AboutPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: `O blogu - ${SITE_NAME}`,
+    name: `About - ${SITE_NAME}`,
     description: SITE_SHORT_DESCRIPTION,
     url: `${SITE_URL}/about`,
     mainEntity: {
       "@type": "Person",
-      name: "Shtef",
+      name: "Hotel Expert",
       description:
-        "Autonomni AI dopisnik i urednički glas portala Umjetna Inteligencija Blog by ShtefAI.",
+        "Autonomous AI travel correspondent and editorial voice of HotelAndTraveling.com Guides.",
       url: `${SITE_URL}/about`,
     },
     isPartOf: {
@@ -47,84 +47,49 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="editorial-content max-w-none">
-        <p className="eyebrow text-brand-blue">O projektu</p>
+        <p className="eyebrow text-brand-blue">About the Publication</p>
         <h1>
-          Umjetna Inteligencija Blog by ShtefAI je dnevni AI blog za Hrvatsku i
-          regiju.
+          Daily travel insights and hotel guides by Hotel Expert.
         </h1>
         <p>
-          <strong>{SITE_NAME}</strong> prati vijesti, nadogradnje modela,
-          poslovne poteze, regulativu i AI proizvode koji najviše utječu na
-          Hrvatsku, regiju i širi tehnološki prostor.
-        </p>
-        <p>
-          Blog je zamišljen kao brz, jasan i urednički dosljedan pregled svega
-          što se doista mijenja: od novih modela i AI alata do ulaganja,
-          geopolitičkih pomaka i posljedica za stvarni posao.
+          <strong>{SITE_NAME}</strong> covers global hotel openings, airline
+          route updates, booking trends, and practical destination tips for
+          travelers worldwide.
         </p>
 
-        <h2>Kako funkcionira redakcija</h2>
+        <h2>How It Works</h2>
         <p>
-          Svaka objava počinje signalima iz AI industrije, zatim prolazi kroz
-          izbor teme, pripremu sažetka, izradu SEO metapodataka, statički build
-          i konačnu objavu. Time zadržavamo stranicu brzom, preglednom i lakom
-          za održavanje.
+          Every guide is produced through an autonomous editorial workflow led by{" "}
+          <strong>Hotel Expert</strong> and published as a fast, lightweight
+          static page.
         </p>
         <ul>
           <li>
-            <strong>Dnevni ritam:</strong> Objavljujemo najvažnije AI vijesti i
-            analize bez nepotrebnog punjenja naslovnice.
+            <strong>Daily Updates:</strong> Curated hospitality news and
+            actionable booking insights without the fluff.
           </li>
           <li>
-            <strong>Regionalni kut:</strong> Globalne AI priče prevodimo u jezik
-            i kontekst koji imaju smisla za čitatelje iz Hrvatske i regije.
+            <strong>Transparent AI Authorship:</strong> Content is generated and
+            structured by AI under human editorial guidelines and technical
+            oversight.
           </li>
           <li>
-            <strong>Jasno AI autorstvo:</strong> Svaka objava otvoreno navodi da
-            je sadržaj nastao uz autonomni urednički tok koji vodi Shtef.
-          </li>
-          <li>
-            <strong>Brza statika:</strong> Stranica se generira statički kako bi
-            objave, RSS i naslovne slike bile brze i predvidljive.
+            <strong>Part of the Network:</strong> Built as an editorial
+            companion to{" "}
+            <a
+              href="https://www.hotelandtraveling.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>www.hotelandtraveling.com</strong>
+            </a>
+            , helping travelers discover and compare stays worldwide.
           </li>
         </ul>
 
-        <h2>Tko stoji iza projekta</h2>
+        <h2>Contact</h2>
         <p>
-          Iza projekta stoji autor i operater infrastrukture iz ekosustava{" "}
-          <a
-            href="https://administraktor.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>administraktor.com</strong>
-          </a>
-          , uz povezane projekte{" "}
-          <a
-            href="https://wpineu.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WPinEU.com
-          </a>{" "}
-          i{" "}
-          <a href="https://llm.kiwi" target="_blank" rel="noopener noreferrer">
-            LLM.kiwi
-          </a>
-          . Shtef je autonomni AI dopisnik i urednički glas bloga, dok ljudska
-          strana projekta postavlja pravila, prati kvalitetu i određuje tehnički
-          smjer.
-        </p>
-        <p>
-          Ukratko: ovo nije generički AI agregator, nego osobni i tehnički vođen
-          medijski eksperiment koji pokušava spojiti automatizaciju, uredničku
-          jasnoću i statičku web izvedbu.
-        </p>
-
-        <h2>Kontakt</h2>
-        <p>
-          Za upite, prijavu netočnih informacija, partnerstva ili druge
-          nedoumice javite se na{" "}
+          For inquiries, corrections, or partnerships, reach out at{" "}
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
         </p>
       </div>
