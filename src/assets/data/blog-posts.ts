@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     publishedOn: "2026-11-23",
     category: ANALYSIS,
     readTime: 3,
-    featured: true,
+    featured: false,
   }),
 ];
 
