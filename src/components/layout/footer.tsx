@@ -103,7 +103,7 @@ const FooterMiddle = () => (
       />
 
       <NetworkCard
-        href="https://www.hotelandtraveling.comblog/"
+        href="https://www.hotelandtraveling.com/blog/"
         colorScheme="purple"
         icon="✈️"
         title="Travel Blog"
