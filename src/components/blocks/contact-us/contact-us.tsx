@@ -9,11 +9,11 @@ const ContactUs = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 space-y-4 text-center sm:mb-16">
           <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
-            Javite nam se za informacije, ispravke ili suradnju
+            Get in touch for inquiries, corrections, or partnerships
           </h2>
           <p className="text-muted-foreground text-xl">
-            Pošaljite poruku za prijavu netočnih informacija, uredničke upite
-            ili razgovor o AI temama koje vrijedi pokriti.
+            Send us a message to report inaccuracies, submit editorial inquiries,
+            or suggest travel and hotel topics worth covering.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ const ContactUs = () => {
             <div className="shadow-none md:col-span-2">
               <Image
                 src="/images/contact-us.webp"
-                alt="Kontakt ilustracija"
+                alt="Contact illustration"
                 width={1120}
                 height={880}
                 sizes="(min-width: 768px) 50vw, 100vw"
